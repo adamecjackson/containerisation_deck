@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>AJ-Reveal-Test (CF)</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Slide 1</h1>
+					<h3>using HTML</h3>
+					<p> some text</p>
+
+					<aside class="notes">
+        		Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+    			</aside>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					# Slide 2
+					#### _using markdown_
+					* 1
+					* 2
+						<aside class="notes">
+							This slide is about showing how one can use markdown rather than HTML
+						</aside>
+				 </script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						# Slide 3
+						### using emojis
+						:+1: - _doesn't work_ :-(
+						<aside class="notes">
+							I tried to use the emoticon markup syntax using the :[emoticode]: but it failed
+						</aside>
+					</script>
+			  </section>
+
+				<section data-markdown>
+					<script type="text/template">
+						# Slide 4
+						### using images with markdown
+						![aws exam snap](/imgs/aws_exam.png)
+
+						<aside class="notes">
+							So this slide is looking at how one can embed an image using markup.
+							The only problem I can see with this is that there is no way of changing
+							the size or position of the image so may have to use HTML
+						</aside>
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						# Slide 5
+						### using images with markdown and HTML
+<!--					 ![aws exam snap](/imgs/aws_exam.png){:height="50px" width="50px"} -->
+						<img src="/imgs/aws_exam.png" alt="AWS Exam Pic" height="200" width="400">
+
+						<aside class="notes">
+							So the previous slide attempted to embed an image using standard markdown
+							however there was no way of changing the size.  Therefore this slide shows
+							how you can mix both markdown and HTML in instances where you need to have
+							the flexibility of HTML.
+						</aside>
+					</script>
+				</section>
+
+				<section>
+					<h1>Slide 6</h1>
+					<h3>using images with HTML</h3>
+					<img src="/imgs/aws_exam.png" alt="AWS Exam Pic" height="200" width="400">
+					<aside class="notes">
+						So following up from the last slide this one embeds the image using
+						standard HTML which allows me to control the size using the properties
+						of the img tag
+					</aside>
+					</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'socket.io/socket.io.js', async: true },
+					{ src: 'plugin/notes-server/client.js', async: true}
+				]
+			});
+		</script>
+	</body>
+</html>

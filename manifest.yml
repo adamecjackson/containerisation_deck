@@ -1,0 +1,10 @@
+---
+applications:
+- name: aj_revealTest
+  memory: 64M
+  disk_quota: 25M
+  instances: 1
+  host: aj_revealTest-${random-word}
+  domain: apps.eu01.cf.canopy-cloud.com
+  path: .
+#  buildpack: https://github.com/cloudfoundry-community/nginx-buildpack.git
